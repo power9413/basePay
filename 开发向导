@@ -33,3 +33,9 @@
 					builder.show();
 				}
 			}
+			
+	7 生成预付单需要的参数含中文导致返回错误信息时需要对post的参数内容进行编码
+	           //生成预付单接口需要的xml内容
+	           String xmlstring =ToXml(packageParams);
+		   //再转码，模仿网页传参数
+		   xmlstring = new String(xmlstring.getBytes("UTF-8"), "ISO-8859-1");
